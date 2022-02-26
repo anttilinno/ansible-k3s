@@ -1,4 +1,6 @@
-# k3s via Ansible 
+# k3s via Ansible.
+
+## [Source](https://github.com/PyratLabs/ansible-role-k3s/blob/main/documentation/quickstart-single-node.md)
 
 - Install ansible k3s role
 
@@ -6,11 +8,11 @@
 
 - Create inventory file from example
 
-  ```cp inventory.yaml.example inventory.yaml```
+    ```cp inventory.yaml.example inventory.yaml```
 - Copy key file from terraform install. Usually *oci-id_rsa*.
 - Change values in **inventory.yaml**
-    - ansible_host
-    - ansible_ssh_private_key_file
+  - ansible_host
+  - ansible_ssh_private_key_file
 - Run the playbook
 
     ```ansible-playbook -i inventory.yaml playbook.yaml```
