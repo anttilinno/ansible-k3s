@@ -1,5 +1,16 @@
 ---
 
+- name: Server initialization
+  hosts: kube-0
+  become: yes
+
+  tasks:
+    - name: Add firewall and configure 80/443
+      include_tasks: tasks/ufw.yaml
+
+  handlers:
+    - include_tasks: handlers.yaml
+
 - name: Build a single node k3s cluster
   hosts: kube-0
   vars:
